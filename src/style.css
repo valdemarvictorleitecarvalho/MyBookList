@@ -124,6 +124,12 @@ body {
     height: 3rem;
 }
 
+.main-content {
+    display: flex;
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
 .books-display {
     display: flex;
     justify-content: center;
@@ -131,17 +137,6 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
 }
-
-.footer {
-    display: flex;
-    grid-column: 1 / 3;
-    grid-row: 4 / 5;
-    background-color: #0B1426;
-    color: gray;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .card {
     border-radius: 8px;
@@ -185,4 +180,15 @@ body {
     width: 24px;
     height: 24px;     
     cursor: pointer;  
+}
+
+.footer {
+    display: flex;
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    background-color: #0B1426;
+    color: gray;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
