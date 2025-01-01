@@ -17,6 +17,7 @@ body {
     height: 100vh;
     text-align: center;
     background-image: linear-gradient(180deg, #000A1F 0%, #00143C 100%);
+    overflow: hidden;
 }
 
 .header {
@@ -197,6 +198,12 @@ body {
     margin-bottom: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 25%;
+    min-height: 200px;
+    max-height: 350px;
+    text-align: left;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
     border-bottom: 5px solid #4A90E2;
     background-color: #2D3A4B;
     transition: background-color 0.3s ease;
@@ -212,12 +219,16 @@ body {
     margin-bottom: 10px;
     color: #E4E9F0;
     text-align: left;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .card p {
     font-size: 0.9rem;
     color: #A5B2C1;
     text-align: left;
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 }
 
 .icons-card {
@@ -243,4 +254,95 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.dialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+    box-sizing: border-box;
+}
+
+.dialog-content {
+    background: #061121;
+    border: 2px solid aqua;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+}
+
+.dialog-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+}
+
+.dialog-content h2 {
+    color: #4A90E2;
+}
+
+.dialog-content input,
+.dialog-content textarea,
+.dialog-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.dialog-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dialog-buttons button#cancelAddDialog, .dialog-buttons button#cancelRemoveDialog {
+    background-color: #f44336; 
+    color: #fff;
+}
+
+.dialog-buttons button#cancelAddDialog:hover, .dialog-buttons button#cancelRemoveDialog:hover {
+    background-color: #d32f2f;
+}
+
+.dialog-buttons button[type="submit"] {
+    background-color: #4caf50; 
+    color: #fff;
+}
+
+.dialog-buttons button[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+.status {
+    margin-top: 0.2rem;
+}
+
+.status.read {
+    color: #4caf50;
+}
+
+.status.unread {
+    color: #f44336;
 }
